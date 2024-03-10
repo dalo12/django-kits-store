@@ -18,3 +18,5 @@ class Kit(models.Model):
     price = models.DecimalField(decimal_places = 2)
     size = models.CharField()
     description = models.TextField()
+    team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="team_kits")
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="category_kits")
