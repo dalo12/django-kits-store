@@ -6,17 +6,17 @@ class Category(models.Model):
     description = models.TextField()
 
 class Team(models.Model):
-    name = models.charField(max_length = 32)
+    name = models.CharField(max_length = 32)
     description = models.TextField()
-    country = models.charField(max_length = 32)
-    sport = models.charField(max_length = 16)
+    country = models.CharField(max_length = 32)
+    sport = models.CharField(max_length = 16)
 
 class Kit(models.Model):
     picture = models.URLField()
     name = models.CharField(max_length = 64)
     year = models.DecimalField(max_digits = 4, decimal_places = 0)
-    price = models.DecimalField(decimal_places = 2)
-    size = models.CharField()
+    price = models.DecimalField(max_digits = 10, decimal_places = 2)
+    size = models.CharField(max_length=64)
     description = models.TextField()
     team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="team_kits")
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="category_kits")
