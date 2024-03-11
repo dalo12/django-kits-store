@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'tailwind',
+    'django_browser_reload',
     'kits_management',
     'django.contrib.admin',
     'django.contrib.auth',
