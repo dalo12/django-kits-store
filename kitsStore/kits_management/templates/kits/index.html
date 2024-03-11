@@ -1,8 +1,31 @@
 {% extends "kits/template.html" %}
 
 {% block cuerpo %}
-    <h1>Kits</h1>
-    {% for kit in kits %}
-    <p>{{ kit.name }}</p>
-    {% endfor %}
+    <table class="table-auto border-collapse">
+        <thead>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Equipo</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Talles</th>
+            <th>Imagen</th>
+            <th>Categoría</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody>
+            {% for kit in kits %}
+            <td>{{ kit.id }}</td>
+            <td>{{ kit.name }}</td>
+            <td>{{ kit.team.name }}</td>
+            <td>{{ kit.description }}</td>
+            <td>{{ kit.price }}</td>
+            <td>{{ kit.size }}</td>
+            <td><img id="image" src="{{ kit.picture }}" alt="No fue posible cargar la foto"></td>
+            <td>{{ kit.category.name }}</td>
+            <td>Editar | Eliminar</td>
+            {% endfor %}
+            
+        </tbody>
+    </table>
 {% endblock cuerpo %}
