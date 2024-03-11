@@ -1,0 +1,8 @@
+{% extends "kits/template.html" %}
+
+{% block cuerpo %}
+    <h1>Kits</h1>
+    {% for kit in kits %}
+    <p>{{ kit.name }}</p>
+    {% endfor %}
+{% endblock cuerpo %}
