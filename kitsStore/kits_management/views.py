@@ -12,7 +12,15 @@ def index(request):
     })
 
 def add(request):
+    if request.method == "POST":
+        print(request)
+        """new_kit = Kit(
+
+        )
+        new_kit.save()"""
     return render(request, "kits/add.html", {
         "talles_validos": TALLES_VALIDOS,
-        "titulo": "Agregar nuevo kit"
+        "titulo": "Agregar nuevo kit",
+        "teams": Team.objects.all(),
+        "categories": Category.objects.all()
     })
