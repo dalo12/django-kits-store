@@ -1,0 +1,27 @@
+{% extends "kits/template.html" %}
+
+{% block cuerpo %}
+<form action="{% url 'add' %}" method="post">
+    {% csrf_token %}
+    <span>Nombre: </span> <input type="text" name="name" required>
+    <span>Año:</span> <input type="number" min="0" step="1" name="year" required>
+    <span>Equipo:</sapan>
+    <select>
+        {%for t in teams%}
+            <option value="{{t.id}}">{{t.name}}</option>
+        {% endfor %}
+    </select>
+    <span>Descripción: </span> <textarea name="description"></textarea>
+    <span>Precio: $</span> <input type="number" min="0" step="0.01" name="price" required>
+    <span>URL imagen: </span> <input type="url" name="picture">
+    <span>Talles: </span> <input type="text" autocapitalize="characters" pattern="{{ talles_validos }}" aria-label="Lista de talles (separados por ',')" name="size" required>
+    <p>Los talles válidos son: {{talles_validos}}</p>
+    <span>Categoría:</sapan>
+    <select>
+        {%for c in categories%}
+            <option value="{{c.id}}">{{c.name}}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" onclick="return confirm('¿Guardar nuevo kit?')" value="Guardar">
+</form>
+{% endblock cuerpo %}
