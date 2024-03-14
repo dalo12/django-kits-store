@@ -1,11 +1,19 @@
+{# Load the tag library #}
+{% load django_bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="es-AR">
 	<head>
-    <title>{{ titulo }}</title>
+    	<title>{{ titulo }}</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="mystyle.css">
+		
 	</head>
 
 	<body>
