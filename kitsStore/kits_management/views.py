@@ -28,9 +28,6 @@ class CreateKit(SuccessMessageMixin, CreateView):
     def get_success_url(self):
         return reverse('index')
 
-class KitDetail(DetailView):
-    model = Kit
-
 class UpdateKit(SuccessMessageMixin, UpdateView):
     model = Kit
     form = Kit

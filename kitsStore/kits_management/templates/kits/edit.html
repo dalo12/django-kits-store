@@ -1,0 +1,12 @@
+{% extends "kits/template.html" %}
+
+{% block cuerpo %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+    <a href="" type="submit">Eliminar</a>
+    <a href="./" type="submit">Cancelar</a>
+
+</form>
+{% endblock cuerpo %}
