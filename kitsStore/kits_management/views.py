@@ -44,11 +44,11 @@ class DeleteKit(SuccessMessageMixin, DeleteView):
 
     def get_success_url(self):
         success_message = "Kit eliminado correctamente"
-        message.success (self.request, (success_message))
+        messages.success (self.request, (success_message))
         return reverse('index')
 
 # Create your views here.
-def index(request):
+"""def index(request):
     return render(request, "kits/index.html", {
         "kits": Kit.objects.all(),
         "titulo": "Kits"
@@ -57,13 +57,14 @@ def index(request):
 def add(request):
     if request.method == "POST":
         print(request)
-        """new_kit = Kit(
+        new_kit = Kit(
 
         )
-        new_kit.save()"""
+        new_kit.save()
     return render(request, "kits/add.html", {
         "talles_validos": TALLES_VALIDOS,
         "titulo": "Agregar nuevo kit",
         "teams": Team.objects.all(),
         "categories": Category.objects.all()
     })
+"""

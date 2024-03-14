@@ -1,6 +1,14 @@
 {% extends "kits/template.html" %}
 
 {% block cuerpo %}
+    {%if messages %}
+        <ul>
+            {% for m in messages %}
+                <li>{{m}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
     <table class="table-auto border-collapse">
         <thead>
             <th>ID</th>
@@ -29,7 +37,7 @@
                         {% csrf_token %}
                         <div>
                             <a href="edit/{{kit.id}}" title="Editar" type="button">Editar</a>
-                            <button onclick="return delete();" type="submit">Eliminar</button>
+                            <button onclick="return eliminar();" type="submit">Eliminar</button>
                         </div>
                     </form>
                 </td>    
@@ -39,3 +47,13 @@
     </table>
     <a href="create" type="button">Agregar</a>
 {% endblock cuerpo %}
+
+<script type="text/javascript">
+    function eliminar() {
+        var x = confirm("¿Está seguro que quiere eliminar el producto?");
+        if (x)
+            return true;
+        else
+            return false;
+    }
+</script>
