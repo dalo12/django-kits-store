@@ -1,10 +1,10 @@
 {% extends "kits/template.html" %}
 
 {% block cuerpo %}
-<form method="post" enctype="multipart/form-data">
+<form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" value="Save">Guardar</button>
+    <button type="submit">Guardar</button>
     <a href="./" type="submit">Cancelar</a>
 
 </form>
