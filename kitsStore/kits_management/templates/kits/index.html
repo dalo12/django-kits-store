@@ -1,7 +1,8 @@
 {% extends "kits/template.html" %}
 
 {% block cuerpo %}
-    <table class="table-auto border-collapse">
+    <p class="fw-bold text-center text-uppercase fs-5">Listado de kits</p>
+    <table class="table table-hover">
         <thead>
             <th>ID</th>
             <th>Nombre</th>
@@ -22,14 +23,14 @@
                 <td>{{ kit.description }}</td>
                 <td>{{ kit.price }}</td>
                 <td>{{ kit.size }}</td>
-                <td><img id="image" src="{{ kit.picture }}" alt="No fue posible cargar la foto"></td>
+                <td><img id="image" src="{{ kit.picture }}" alt="No fue posible cargar la foto" class="rounded mx-auto d-block"></td>
                 <td>{{ kit.category.name }}</td>
                 <td>
                     <form method="POST" action="delete/{{kit.id}}">
                         {% csrf_token %}
-                        <div>
-                            <a href="edit/{{kit.id}}" title="Editar" type="button">Editar</a>
-                            <button type="submit">Eliminar</button>
+                        <div class="btn-group" role="group">
+                            <a href="edit/{{kit.id}}" title="Editar" type="button" class="btn btn-primary">Editar</a>
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
                         </div>
                     </form>
                 </td>    
@@ -37,13 +38,19 @@
             {% endfor %}
         </tbody>
     </table>
-    <a href="create" type="button">Agregar</a>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="create" type="button" class="btn btn-primary btn-lg me-md-2">Agregar</a>
+    </div>
 
     {%if messages %}
+    <div class="alert alert-primary" role="alert">
         <ul>
             {% for m in messages %}
                 <li>{{m}}</li>
             {% endfor %}
         </ul>
+    </div>
     {% endif %}
+    
 {% endblock cuerpo %}
