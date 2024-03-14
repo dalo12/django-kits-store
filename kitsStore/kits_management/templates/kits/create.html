@@ -1,7 +1,7 @@
 {% extends "kits/template.html" %}
 
 {% block cuerpo %}
-<form action="{% url 'add' %}" method="post">
+<form action="{% url 'create' %}" method="post">
     {% csrf_token %}
     <span>Nombre: </span> <input type="text" name="name" required>
     <span>Año:</span> <input type="number" min="0" step="1" name="year" required>
@@ -22,6 +22,8 @@
             <option value="{{c.id}}">{{c.name}}</option>
         {% endfor %}
     </select>
-    <input type="submit" onclick="return confirm('¿Guardar nuevo kit?')" value="Guardar">
+    <button type="submit" onclick="return confirm('¿Guardar nuevo kit?')" value="Guardar">
+    <a href="./" type="submit">Cancelar</a>
+
 </form>
 {% endblock cuerpo %}

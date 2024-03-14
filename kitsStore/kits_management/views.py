@@ -11,8 +11,6 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django import forms
 
-TALLES_VALIDOS = ['XS','S','M','L','XL','XXL','XXXL','XXXXL','XXXXXL'];
-
 class KitsList(ListView):
     model = Kit
 
@@ -21,6 +19,11 @@ class CreateKit(SuccessMessageMixin, CreateView):
     form = Kit
     fields = "__all__"
     success_message = "Kit creado correctamente"
+    extra_context = {
+        "talles_validos" : ['XS','S','M','L','XL','XXL','XXXL','XXXXL','XXXXXL'],
+        "categories" : Category.objects.all(),
+        "teams" : Team.objects.all()
+    }
 
     def get_success_url(self):
         return reverse('index')

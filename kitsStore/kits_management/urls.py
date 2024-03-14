@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.KitsList.as_view(template_name="kits/index.html"), name="index"),
-    path('add', views.add, name="add")
+    path('create', views.CreateKit.as_view(template_name="kits/create.html"), name="create")
 ]
