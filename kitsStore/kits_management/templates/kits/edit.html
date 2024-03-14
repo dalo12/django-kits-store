@@ -5,8 +5,22 @@
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Guardar</button>
-    <a href="../delete/{{kit.id}}" type="submit">Eliminar</a>
     <a href="../" type="submit">Cancelar</a>
-
+</form>
+<form method="POST" action="../delete/{{kit.id}}">
+    {% csrf_token %}
+    <div>
+        <button onclick="return eliminar();" type="submit">Eliminar</button>
+    </div>
 </form>
 {% endblock cuerpo %}
+
+<script type="text/javascript">
+    function eliminar() {
+        var x = confirm("¿Está seguro que quiere eliminar el producto?");
+        if (x)
+            return true;
+        else
+            return false;
+    }
+</script>
