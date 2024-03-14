@@ -5,11 +5,18 @@ class Category(models.Model):
     name = models.CharField(max_length = 16)
     description = models.TextField()
 
+    def __str__(self):
+        return self.name
+    
+
 class Team(models.Model):
     name = models.CharField(max_length = 32)
     description = models.TextField()
     country = models.CharField(max_length = 32)
     sport = models.CharField(max_length = 16)
+
+    def __str__(self):
+        return self.name
 
 class Kit(models.Model):
     picture = models.URLField()

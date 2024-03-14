@@ -1,14 +1,6 @@
 {% extends "kits/template.html" %}
 
 {% block cuerpo %}
-    {%if messages %}
-        <ul>
-            {% for m in messages %}
-                <li>{{m}}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-
     <table class="table-auto border-collapse">
         <thead>
             <th>ID</th>
@@ -46,6 +38,14 @@
         </tbody>
     </table>
     <a href="create" type="button">Agregar</a>
+
+    {%if messages %}
+        <ul>
+            {% for m in messages %}
+                <li>{{m}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 {% endblock cuerpo %}
 
 <script type="text/javascript">
