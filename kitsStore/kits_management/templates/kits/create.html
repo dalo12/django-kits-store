@@ -1,14 +1,8 @@
 {% extends "kits/template.html" %}
 {% load crispy_forms_tags %}
 
-{# Load the tag library #}
-{% load django_bootstrap5 %}
-
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
 {% block cuerpo %}
+<p class="fw-bold text-center text-uppercase fs-5">Agregar nuevo kit</p>
 <form method="post">
     {% csrf_token %}
     {{ form|crispy }}

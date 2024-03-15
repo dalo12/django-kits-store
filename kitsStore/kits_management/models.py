@@ -19,11 +19,11 @@ class Team(models.Model):
         return self.name
 
 class Kit(models.Model):
-    picture = models.URLField()
     name = models.CharField(max_length = 64)
+    description = models.TextField()
+    picture = models.URLField()
     year = models.DecimalField(max_digits = 4, decimal_places = 0)
     price = models.DecimalField(max_digits = 10, decimal_places = 2)
     size = models.CharField(max_length=64)
-    description = models.TextField()
     team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="team_kits")
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="category_kits")

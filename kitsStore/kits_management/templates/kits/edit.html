@@ -1,16 +1,18 @@
 {% extends "kits/template.html" %}
+{% load crispy_forms_tags %}
 
 {% block cuerpo %}
+<p class="fw-bold text-center text-uppercase fs-5">Editar kit</p>
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Guardar</button>
-    <a href="../" type="button">Cancelar</a>
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href="../" type="button" class="btn btn-secondary">Cancelar</a>
 </form>
 <form method="POST" action="../delete/{{kit.id}}">
     {% csrf_token %}
     <div>
-        <button type="submit">Eliminar</button>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
     </div>
 </form>
 {% endblock cuerpo %}
