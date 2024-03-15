@@ -16,6 +16,11 @@ First you need to activate de Python virtual enviroment. From the project direct
 source django-kits-store-env/bin/activate
 ```
 
+Next, install the dependencies
+```
+pip install -r requirements.txt
+```
+
 Then, run the server
 ```
 python kitsStore/manage.py runserver
