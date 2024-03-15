@@ -1,0 +1,1 @@
+[{"model": "kits_management.category", "pk": 1, "fields": {"name": "Kids", "description": "Kits para niñeces"}}, {"model": "kits_management.category", "pk": 2, "fields": {"name": "Masculino", "description": "Kits para masculinidades"}}, {"model": "kits_management.category", "pk": 3, "fields": {"name": "Femenino", "description": "Kits para femenidades"}}]
