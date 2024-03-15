@@ -46,5 +46,3 @@ class DeleteKit(SuccessMessageMixin, DeleteView):
         success_message = "Kit eliminado correctamente"
         messages.success (self.request, (success_message))
         return reverse('index')
-
-# Create your views here.
