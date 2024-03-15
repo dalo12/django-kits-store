@@ -1,5 +1,5 @@
 # Django Kits Store
-A football soccer kits store backend made with Django
+A football soccer kits store backend made with Django 
 
 ![Screenshot of the index page](/screenshots/index.png)
 
@@ -26,6 +26,12 @@ Then, run the server
 python kitsStore/manage.py runserver
 ```
 
+Now you can access the main page from
+```
+http://127.0.0.1:8000/kits
+```
+
+
 ## Miscellaneous
 Dump data is provided.
 To load the dump data for the Category model, type:
@@ -44,6 +50,6 @@ python kitsStore/manage.py loaddata kitsStore/kits_management/fixtures/Kit.json
 ```
 
 ## Credits
-Project made by David López for the Django course at the 4° Escuela de Actualización en Tecnologías de Informática (2024)
-Universidad Nacional del Sur
+Project made by David López for the Django course at the 4° Escuela de Actualización en Tecnologías de Informática (2024) <br>
+Universidad Nacional del Sur <br>
 Bahía Blanca, Buenos Aires, Argentina 🇦🇷
